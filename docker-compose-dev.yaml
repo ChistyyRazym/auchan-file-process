@@ -1,0 +1,15 @@
+services:
+  auchan_file_process:
+    build: .
+    restart: "always"
+    container_name: auchan_file_process
+    command: [ "python", "-m", "auchan_file_process"]
+    volumes:
+        - ./Result:/usr/src/app/Result
+        - ./TEST_Folder_1:/usr/src/app/TEST_Folder_1
+        - ./TEST_Folder_2:/usr/src/app/TEST_Folder_2
+    environment:
+      input_dir: '["TEST_Folder_1", "TEST_Folder_2"]'
+      output_dir: Result
+      file_name_mask: TEST_AUCHAN*
+
