@@ -2,5 +2,5 @@
 
 ## Запуск:
 ```
-$ docker-compose up -d --remove-orphans
+$ docker-compose -f docker-compose-dev.yaml up -d
 ```
